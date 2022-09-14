@@ -7,7 +7,7 @@ function NavBar() {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">SAYYES</Navbar.Brand>
+                <Navbar.Brand href="#home">SAYYES!</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end">
                     <Nav>

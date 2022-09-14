@@ -8,12 +8,9 @@ import vestido2 from "../assets/img/vestido2.jpg";
 import vestido3 from "../assets/img/vestido3.jpg";
 import vestido4 from "../assets/img/vestido4.jpg";
 
-export default function Item({ name, description, price, id }) {
-  const vestidos = [vestido1, vestido2, vestido3, vestido4];
-  function onAdd() {
-    setItem(1 + 1);
-  }
 
+export default function Item({ name, description, price, id, stock }) {
+  const vestidos = [vestido1, vestido2, vestido3, vestido4];
   const [item, setItem] = useState(1);
 
   return (
@@ -25,10 +22,10 @@ export default function Item({ name, description, price, id }) {
           <Badge bg="secondary">
             {price}
           </Badge>
+          <span>Stock: {stock}</span>
         </div>
         <Card.Text>{description}</Card.Text>
-
-        <ItemCount stock="5" initial={item} onAdd={() => onAdd()}></ItemCount>
+        <ItemCount stock={stock} initial={item}></ItemCount>
       </Card.Body>
     </Card>
   );
