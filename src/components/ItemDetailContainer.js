@@ -26,7 +26,7 @@ export default function ItemDetailContainer() {
   }, []);
 
   return (
-    <div>
+    <div className="mt-5">
       {item.length === 0 ? (
         <div className="text-center">
           <Spinner animation="border" role="status">

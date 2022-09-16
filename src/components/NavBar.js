@@ -19,7 +19,6 @@ function NavBar() {
               <NavDropdown.Item href="/categoria/nuevo">Nuevos</NavDropdown.Item>
               <NavDropdown.Item href="/categoria/usado">Usados</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="/productos">Productos</Nav.Link>
             <Nav.Link href="/contacto">Contacto</Nav.Link>
             <Nav.Link href="/">
               <CartWidget></CartWidget>

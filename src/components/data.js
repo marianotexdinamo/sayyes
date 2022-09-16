@@ -27,4 +27,32 @@ export const data = [
       precio: 150000,
       stock: 2,
     },
+    {
+      id: 5,
+      nombre: "Paris",
+      descripcion: "Usado",
+      precio: 80000,
+      stock: 2,
+    },
+    {
+      id: 6,
+      nombre: "Monaco",
+      descripcion: "Usado",
+      precio: 60000,
+      stock: 2,
+    },
+    {
+      id: 7,
+      nombre: "Spain",
+      descripcion: "Usado",
+      precio: 50000,
+      stock: 2,
+    },
+    {
+      id: 8,
+      nombre: "Italia",
+      descripcion: "Nuevo",
+      precio: 150000,
+      stock: 2,
+    },
   ]
