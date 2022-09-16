@@ -4,7 +4,7 @@ function ItemListContainer() {
 
     return (
         <div className="mt-5">
-            <ItemList key={11212}></ItemList>
+            <ItemList></ItemList>
         </div>
     );
 }

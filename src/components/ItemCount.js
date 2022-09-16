@@ -4,11 +4,10 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { useState } from "react";
 
 function ItemCount({ stock, initial }) {
-
   const [count, setCount] = useState(initial);
 
   return (
-    <div>
+    <>
       <div className="d-flex align-items-center justify-content-between">
         <InputGroup>
           <Button variant="outline-primary">-</Button>
@@ -17,13 +16,14 @@ function ItemCount({ stock, initial }) {
             aria-describedby="basic-addon1"
             value={count}
           />
-          <Button variant="outline-primary" onClick={
-            () => {
-              if( count + 1 <= stock){
-                setCount(count + 1)
+          <Button
+            variant="outline-primary"
+            onClick={() => {
+              if (count + 1 <= stock) {
+                setCount(count + 1);
               }
-            }
-          }>
+            }}
+          >
             +
           </Button>
         </InputGroup>
@@ -31,7 +31,7 @@ function ItemCount({ stock, initial }) {
           Agregar
         </Button>
       </div>
-    </div>
+    </>
   );
 }
 
