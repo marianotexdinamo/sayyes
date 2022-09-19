@@ -1,3 +1,4 @@
+import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,19 +10,17 @@ import { useParams } from "react-router-dom";
 
 export default function ItemList() {
   const [vestidos, setVestidos] = useState([]);
-  const { categoria } = useParams();
+  const categoria = useParams().categoria;
 
-  useEffect(() => {
-    const getItem = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(data);
-      }, 2000);
-    });
+  const fetchItems = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(data);
+    }, 500);
+  });
 
-    getItem.then((res) => {
-      if (categoria === undefined) {
-        setVestidos(res);
-      } else if (categoria === "nuevo") {
+  const getItem = () => {
+    fetchItems.then((res) => {
+      if (categoria === "nuevo") {
         let arrayTemp = [];
         res.forEach((element) => {
           if (element.descripcion === "Nuevo") {
@@ -29,7 +28,7 @@ export default function ItemList() {
           }
         });
         setVestidos(arrayTemp);
-      } else {
+      } else if (categoria === "usado") {
         let arrayTemp = [];
         res.forEach((element) => {
           if (element.descripcion === "Usado") {
@@ -37,9 +36,20 @@ export default function ItemList() {
           }
         });
         setVestidos(arrayTemp);
+      } else {
+        setVestidos(res);
       }
     });
+  };
+
+  useEffect(() => {
+    getItem();
   }, []);
+
+  useEffect(() => {
+    setVestidos([])
+    getItem();
+  }, [useParams().categoria]);
 
   return (
     <Container className="mt-5">
@@ -55,6 +65,7 @@ export default function ItemList() {
                   price={item.precio}
                   id={item.id}
                   stock={item.stock}
+                  imagen={item.imagen}
                 ></Item>
               </Col>
             );

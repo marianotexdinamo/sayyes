@@ -1,14 +1,18 @@
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './Routes/Home';
 import QuienesSomos from "./Routes/QuienesSomos";
 import Productos from './Routes/Productos';
 import Producto from './Routes/Producto';
 import Contacto from './Routes/Contacto';
+import Carrito from './Routes/Carrito';
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <NavBar/>
         <Routes>
           <Route exact path="/" element={<Home/>}/>
           <Route exact path="/quienes-somos" element={<QuienesSomos/>}/>
@@ -16,6 +20,7 @@ function App() {
           <Route exact path="/producto/:id" element={<Producto/>}/>
           <Route exact path="/categorias/" element={<Productos/>}/>
           <Route exact path="/categoria/:categoria" element={<Productos/>}/>
+          <Route exact path="/carrito" element={<Carrito/>}/>
           <Route exact path="/contacto" element={<Contacto/>}/>
         </Routes>
       </BrowserRouter>

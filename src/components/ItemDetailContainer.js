@@ -7,18 +7,18 @@ import { useParams } from "react-router-dom";
 
 export default function ItemDetailContainer() {
   const [item, setItem] = useState([]);
-  const { id } = useParams();
+  const id = parseInt(useParams().id);
 
   useEffect(() => {
     const getIem = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(data);
-      }, 3000);
+      }, 800);
     });
 
     getIem.then((res) => {
       res.forEach(element => {
-        if(element.id = id) {
+        if(element.id === id) {
           setItem(element);
         }
       });
@@ -39,6 +39,7 @@ export default function ItemDetailContainer() {
           descripcion={item.descripcion}
           precio={item.precio}
           stock={item.stock}
+          imagen={item.imagen}
         />
       )}
     </div>
