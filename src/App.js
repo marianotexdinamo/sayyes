@@ -7,6 +7,7 @@ import Producto from './Routes/Producto';
 import Contacto from './Routes/Contacto';
 import Carrito from './Routes/Carrito';
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/carrito" element={<Carrito/>}/>
           <Route exact path="/contacto" element={<Contacto/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
