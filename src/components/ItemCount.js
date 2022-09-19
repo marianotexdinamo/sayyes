@@ -53,10 +53,6 @@ function ItemCount({ stock, initial, onAdd }) {
           </Button>
         </Col>
       </Row>
-
-      <LinkContainer to="/carrito">
-        <Button variant="primary">Finalizar compra</Button>
-      </LinkContainer>
     </>
   );
 }
