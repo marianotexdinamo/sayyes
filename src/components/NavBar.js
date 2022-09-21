@@ -15,7 +15,7 @@ function NavBar() {
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
-          <Nav>
+          <Nav className="align-items-center">
             <LinkContainer to="/">
               <Nav.Link>Inicio</Nav.Link>
             </LinkContainer>
@@ -36,11 +36,9 @@ function NavBar() {
             <LinkContainer to="/contacto">
               <Nav.Link>Contacto</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/carrito">
-              <Nav.Link>
-                <CartWidget></CartWidget>
-              </Nav.Link>
-            </LinkContainer>
+            <Nav.Link>
+              <CartWidget></CartWidget>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

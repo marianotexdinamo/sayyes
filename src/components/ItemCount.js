@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useState } from "react";
-import { LinkContainer } from "react-router-bootstrap";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
@@ -37,11 +36,7 @@ function ItemCount({ stock, initial, onAdd }) {
             />
             <Button
               variant="outline-primary"
-              onClick={() => {
-                if (count + 1 <= stock) {
-                  setCount(count + 1);
-                }
-              }}
+              onClick={() => {setCount(count + 1);}}
             >
               +
             </Button>

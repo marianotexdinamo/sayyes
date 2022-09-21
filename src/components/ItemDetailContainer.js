@@ -34,13 +34,7 @@ export default function ItemDetailContainer() {
           </Spinner>
         </div>
       ) : (
-        <ItemDetail
-          nombre={item.nombre}
-          descripcion={item.descripcion}
-          precio={item.precio}
-          stock={item.stock}
-          imagen={item.imagen}
-        />
+        <ItemDetail item={item}/>
       )}
     </div>
   );
