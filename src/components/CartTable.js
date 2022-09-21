@@ -33,7 +33,7 @@ export default function CartTable() {
                   <td>{item.precio}</td>
                   <td>{item.cantidad}</td>
                   <td>
-                    <Button variant="primary">
+                    <Button variant="primary" onClick={() => cartValues.removeItemsCart(item)}>
                         <FontAwesomeIcon icon={faTrash} />
                     </Button>
                   </td>

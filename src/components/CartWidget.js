@@ -9,14 +9,14 @@ import Button from "react-bootstrap/Button";
 import { LinkContainer } from "react-router-bootstrap";
 
 function CartWidget() {
-  const { cart } = useContext(CartContext);
+  const { cart,total } = useContext(CartContext);
   const dropDownStyle = { minWidth: "250px", padding: "15px" };
   
   return (
     <Dropdown align="end">
       <Dropdown.Toggle variant="outline-primary" id="dropdown-basic">
         <FontAwesomeIcon icon={faCartShopping} />
-        <span className="mx-2">{cart.id}</span>
+        <span className="mx-2">{cart.length}</span>
       </Dropdown.Toggle>
       <Dropdown.Menu style={dropDownStyle}>
         <h5>Carrito</h5>
@@ -46,7 +46,8 @@ function CartWidget() {
         {cart.length !== 0 && (
           <>
             <Dropdown.Divider />
-            {/* <h6>Total: ${total}</h6> */}
+              <h6 className="py-3">Total: ${total}</h6>
+            <Dropdown.Divider />
             <div className="d-grid gap-2">
             <LinkContainer to="/carrito">
                 <Button variant="primary">Ir al carrito</Button>

@@ -49,7 +49,7 @@ export default function ItemList() {
   useEffect(() => {
     setVestidos([])
     getItem();
-  }, [useParams().categoria]);
+  }, [categoria]);
 
   return (
     <Container className="mt-5">
