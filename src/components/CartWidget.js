@@ -32,8 +32,8 @@ function CartWidget() {
                   key={item.id}
                 >
                   <div className="ms-2 me-auto">
-                    <div className="fw-bold">{item.nombre}</div>
-                    Total: ${item.precio * item.cantidad}
+                    <div className="fw-bold">{item.title}</div>
+                    Total: ${item.price * item.cantidad}
                   </div>
                   <Badge bg="primary" pill>
                     {item.cantidad}

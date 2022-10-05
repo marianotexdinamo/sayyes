@@ -28,9 +28,9 @@ export default function CartTable() {
               return (
                 <tr key={item.id} style={ {verticalAlign: "baseline"} }>
                   <td>{index + 1}</td>
-                  <td><img width="50" src={item.imagen} alt={item.nombre}/></td>
-                  <td>{item.nombre}</td>
-                  <td>{item.precio}</td>
+                  <td><img width="50" src={item.imageId} alt={item.title}/></td>
+                  <td>{item.title}</td>
+                  <td>{item.price}</td>
                   <td>{item.cantidad}</td>
                   <td>
                     <Button variant="primary" onClick={() => cartValues.removeItemsCart(item)}>

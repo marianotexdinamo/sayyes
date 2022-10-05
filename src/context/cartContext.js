@@ -13,7 +13,7 @@ export default function CartProvider({ children }) {
     } else{
       setCart([...cart, {...item, cantidad: cantidad}]);
     }
-    const totalParcial = item.precio * cantidad;
+    const totalParcial = item.price * cantidad;
     const totalEnd = totalParcial + total;
     setTotal(totalEnd)
   };
@@ -29,7 +29,7 @@ export default function CartProvider({ children }) {
         var productoH = cart.find(x => x.id === item.id)
         cart[cart.indexOf(productoH)].cantidad -= 1;
         setCart([...cart]);
-        const totalEnd = total - item.precio;
+        const totalEnd = total - item.price;
         setTotal(totalEnd)
       } else{
         setCart(current => current.filter(item => {
