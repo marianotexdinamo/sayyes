@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import { CartContext } from "../context/cartContext";
 import CartTable from "./CartTable";
 import Modal from "react-bootstrap/Modal";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 export default function Cart() {
   const cartValues = useContext(CartContext);
@@ -18,6 +19,30 @@ export default function Cart() {
   const clearCart = () => {
     cartValues.clearCart()
     handleClose()
+  }
+
+  const sendOrder = () => {
+    const db = getFirestore();
+
+    const order = {
+      buyer: {
+        name: "Carlos",
+        phone: "156456456",
+        email: "carlos@carlos.com"
+      },
+      items: [{ 
+        title: "Vestido 1",
+        price: 50000,
+        id: 456789
+      }],
+      total: 158700000
+    }
+    
+    const orderCollections = collection(db, 'orders');
+    addDoc(orderCollections, order).then(( { id }) => {
+      console.log(id)
+    })
+
   }
 
   return (
@@ -41,7 +66,7 @@ export default function Cart() {
                 <Card.Body>
                   <Card.Title>Total: ${cartValues.total}</Card.Title>
                   <div className="d-grid gap-2">
-                    <Button variant="primary">Ir a Pagar</Button>
+                    <Button onClick={ sendOrder } variant="primary">Ir a Pagar</Button>
                   </div>
                 </Card.Body>
               </Card>
