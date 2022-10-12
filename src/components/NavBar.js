@@ -11,7 +11,7 @@ function NavBar() {
     <Navbar bg="light" expand="lg">
       <Container>
         <LinkContainer to="/">
-          <Navbar.Brand>SAYYES!</Navbar.Brand>
+          <Navbar.Brand>Say YES!</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">

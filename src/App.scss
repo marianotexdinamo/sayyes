@@ -1,0 +1,45 @@
+$primary: #f1b599;
+$secondary: #3b7662;
+$success: #3e8d63;
+$info: #7854e4;
+$warning: #b8c924;
+$danger: #d62518;
+$light: #f8f9fa;
+$dark: #343a40;
+
+//custom color to be mapped
+$accent: #f1b599;
+
+// this is used to map colors. change accordingly.
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  info: $info,
+  warning: $warning,
+  danger: $danger,
+  light: $light,
+  dark: $dark,
+  // add any additional color below
+  accent: $accent,
+  // now bg-accent,btn-accent,etc.. can be called
+);
+
+.carousel .carousel-inner {
+  height: 50vh;
+}
+.carousel-inner .carousel-item img {
+  object-fit: cover;
+  position: absolute;
+}
+.carousel-caption{
+    top: 100%;
+}
+
+@media (max-width: 768px) {
+  .carousel .carousel-inner {
+    height: auto;
+  }
+}
+// Import Bootstrap and its default variables
+@import "~bootstrap/scss/bootstrap.scss";
