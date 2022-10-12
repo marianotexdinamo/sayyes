@@ -6,7 +6,13 @@ import Item from "./Item";
 import { useEffect, useState } from "react";
 import Spinner from "react-bootstrap/Spinner";
 import { useParams } from "react-router-dom";
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
 export default function ItemList() {
   const [vestidos, setVestidos] = useState([]);
@@ -16,35 +22,50 @@ export default function ItemList() {
     const db = getFirestore();
     var itemsCollection;
 
-    if(categoria === undefined) {
+    if (categoria === undefined) {
       itemsCollection = collection(db, "items");
-    } else{
+    } else {
       itemsCollection = query(
-        collection(db, "items"), 
-        where( "categoryId", "==", categoria )
+        collection(db, "items"),
+        where("categoryId", "==", categoria)
       );
     }
-    
+
     getDocs(itemsCollection).then((data) => {
-      if( data.size === 0 ){
-        console.log("no hay resultados")
-      } else{
-        setVestidos( data.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      if (data.size === 0) {
+        console.log("no hay resultados");
+      } else {
+        setVestidos(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       }
     });
-  }
+  };
 
   useEffect(() => {
     getFirebase();
   }, []);
 
   useEffect(() => {
-    setVestidos([])
+    setVestidos([]);
     getFirebase();
   }, [categoria]);
 
   return (
     <Container className="mt-5">
+      {categoria === "nuevo" && (
+        <Col className="col-12">
+          <h6 className="text-left mb-4">Vestidos nuevos</h6>
+        </Col>
+      )}
+      {categoria === "usado" && (
+        <Col className="col-12">
+          <h6 className="text-left mb-4">Vestidos usados</h6>
+        </Col>
+      )}
+      {categoria === undefined && (
+        <Col className="col-12">
+          <h6 className="text-left mb-4">Todos los vestidos</h6>
+        </Col>
+      )}
       <Row>
         {vestidos.length !== 0 ? (
           vestidos.map((item) => {

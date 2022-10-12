@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
-import Spinner from 'react-bootstrap/Spinner';
+import Spinner from "react-bootstrap/Spinner";
 import { useParams } from "react-router-dom";
-import { doc, getDoc, getFirestore } from 'firebase/firestore';
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import HeroSection from "../components/HeroSection";
 
 export default function ItemDetailContainer() {
   const [item, setItem] = useState([]);
@@ -13,27 +14,32 @@ export default function ItemDetailContainer() {
     const db = getFirestore();
     const itemFirebase = doc(db, "items", id);
     getDoc(itemFirebase).then((data) => {
-      if( data.exists() ){
-        setItem( { id: data.id, ...data.data() } );
+      if (data.exists()) {
+        setItem({ id: data.id, ...data.data() });
       }
     });
-  }
+  };
 
   useEffect(() => {
     getFirebase();
   }, []);
 
   return (
-    <div className="mt-5">
-      {item.length === 0 ? (
-        <div className="text-center">
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
-        </div>
-      ) : (
-        <ItemDetail item={item}/>
-      )}
-    </div>
+    <>
+    {item.length !== 0 && (
+      <HeroSection text={item.title} img={item.imageId} />
+    )}
+      <div className="mt-5">  
+        {item.length === 0 ? (
+          <div className="text-center">
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
+        ) : (
+          <ItemDetail item={item} />
+        )}
+      </div>
+    </>
   );
 }

@@ -1,16 +1,13 @@
 $primary: #f1b599;
 $secondary: #3b7662;
 $success: #3e8d63;
-$info: #7854e4;
+$info: #fff;
 $warning: #b8c924;
 $danger: #d62518;
-$light: #f8f9fa;
+$light: #fff;
 $dark: #343a40;
-
-//custom color to be mapped
 $accent: #f1b599;
 
-// this is used to map colors. change accordingly.
 $theme-colors: (
   primary: $primary,
   secondary: $secondary,
@@ -20,26 +17,68 @@ $theme-colors: (
   danger: $danger,
   light: $light,
   dark: $dark,
-  // add any additional color below
   accent: $accent,
-  // now bg-accent,btn-accent,etc.. can be called
 );
 
 .carousel .carousel-inner {
-  height: 50vh;
+  height: auto;
 }
-.carousel-inner .carousel-item img {
-  object-fit: cover;
-  position: absolute;
-}
-.carousel-caption{
-    top: 100%;
+.carousel-inner .carousel-item {
+  height: 60vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-@media (max-width: 768px) {
-  .carousel .carousel-inner {
-    height: auto;
-  }
+.carousel-inner .carousel-item h3{
+  font-size: 2em;
 }
-// Import Bootstrap and its default variables
+
+.carousel-inner .carousel-item::after{
+  content: "";
+  z-index: -1;
+  display: block;
+  position: absolute; 
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: -moz-linear-gradient(top,  rgba(241,181,153,0.1) 0%, rgba(241,181,153,0.8) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(241,181,153,0.1) 0%,rgba(241,181,153,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(241,181,153,0.1) 0%,rgba(241,181,153,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1af1b599', endColorstr='#ccf1b599',GradientType=0 ); /* IE6-9 */
+}
+
+.hero-section{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-section::after{
+  content: "";
+  z-index: 1;
+  display: block;
+  position: absolute; 
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: -moz-linear-gradient(top,  rgba(241,181,153,0.1) 0%, rgba(241,181,153,0.8) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(241,181,153,0.1) 0%,rgba(241,181,153,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(241,181,153,0.1) 0%,rgba(241,181,153,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1af1b599', endColorstr='#ccf1b599',GradientType=0 ); /* IE6-9 */
+}
+
+.hero-section h1{
+  position: relative;
+  font-size: 1.9em;
+  z-index: 99;
+  margin: 0;
+}
+
 @import "~bootstrap/scss/bootstrap.scss";

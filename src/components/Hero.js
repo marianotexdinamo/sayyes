@@ -1,40 +1,44 @@
 import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
+import { LinkContainer } from "react-router-bootstrap";
+
+
+var hero1 = {
+  backgroundImage: `url('../assets/img/hero1.jpg')`
+}
+
+var hero2 = {
+  backgroundImage: `url('../assets/img/hero2.jpg')`
+}
+
+var hero3 = {
+  backgroundImage: `url('../assets/img/hero3.jpg')`
+}
 
 export default function CarouselFadeExample() {
   return (
     <Carousel fade>
-      <Carousel.Item>
-        <img
-          src="../assets/img/hero1.jpg"
-          alt="First slide"
-        />
+      <Carousel.Item style={hero1}>
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>SAYYES!</h3>
+          <p>Espacio Boutique para novias.</p>
+          <LinkContainer to="/productos">
+          <Button className="mb-5" variant="outline-light">Mirá nuestro catálogo</Button>
+          </LinkContainer>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
-        <img
-          src="../assets/img/hero2.jpg"
-          alt="Second slide"
-        />
-
+      <Carousel.Item style={hero2}>
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>¡Traé tu vestido de novia!</h3>
+          <p>Nosotras nos encargamos del resto.</p>
+          <Button className="mb-5" variant="outline-light">Publicar vestido</Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
-        <img
-          src="../assets/img/hero3.jpg"
-          alt="Third slide"
-        />
-
+      <Carousel.Item style={hero3}>
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3>¡Solicitá tu turno!</h3>
+          <p>Podés solicitar tu turno de manera online.</p>
+          <Button className="mb-5" variant="outline-light">Solicitá tu turno</Button>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -1,8 +1,10 @@
-import React from 'react';
-import ItemDetailContainer from '../components/ItemDetailContainer';
+import React from "react";
+import ItemDetailContainer from "../components/ItemDetailContainer";
 
 export default function Producto() {
   return (
-      <ItemDetailContainer/>
-  )
+    <>
+      <ItemDetailContainer />
+    </>
+  );
 }
