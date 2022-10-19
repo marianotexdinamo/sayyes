@@ -6,7 +6,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 export default function Footer() {
   return (
-    <footer className="bg-light text-muted py-5 mt-5">
+    <footer className="bg-primary text-white py-5 mt-5">
       <Container>
         <Row>
           <Col>
@@ -17,23 +17,23 @@ export default function Footer() {
             <ul>
               <li>
                 <LinkContainer to="/">
-                  <a className="d-block" href="#!">
+                  <div>
                     Inicio
-                  </a>
+                  </div>
                 </LinkContainer>
               </li>
               <li>
-                <LinkContainer to="/quienes-somos">
-                  <a className="d-block" href="#!">
+                <LinkContainer to="/nosotras">
+                  <div>
                     Quienes Somos
-                  </a>
+                  </div>
                 </LinkContainer>
               </li>
               <li>
-                <LinkContainer to="/contacto">
-                  <a className="d-block" href="#!">
-                    Contacto
-                  </a>
+                <LinkContainer to="/faq">
+                  <div>
+                    Preguntas frecuentes
+                  </div>
                 </LinkContainer>
               </li>
             </ul>
@@ -43,23 +43,23 @@ export default function Footer() {
             <ul>
               <li>
                 <LinkContainer to="/productos">
-                  <a className="d-block" href="#!">
+                  <div>
                     Todos
-                  </a>
+                  </div>
                 </LinkContainer>
               </li>
               <li>
                 <LinkContainer to="/categoria/nuevo">
-                  <a className="d-block" href="#!">
+                  <div>
                     Nuevos
-                  </a>
+                  </div>
                 </LinkContainer>
               </li>
               <li>
                 <LinkContainer to="/categoria/usado">
-                  <a className="d-block" href="#!">
+                  <div>
                     Usados
-                  </a>
+                  </div>
                 </LinkContainer>
               </li>
             </ul>

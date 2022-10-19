@@ -51,21 +51,23 @@ export default function ItemList() {
 
   return (
     <Container className="mt-5">
-      {categoria === "nuevo" && (
+
+      {categoria === "nuevo" && vestidos.length !== 0 && (
         <Col className="col-12">
           <h6 className="text-left mb-4">Vestidos nuevos</h6>
         </Col>
       )}
-      {categoria === "usado" && (
+      {categoria === "usado" && vestidos.length !== 0 && (
         <Col className="col-12">
           <h6 className="text-left mb-4">Vestidos usados</h6>
         </Col>
       )}
-      {categoria === undefined && (
+      {categoria === undefined && vestidos.length !== 0 && (
         <Col className="col-12">
           <h6 className="text-left mb-4">Todos los vestidos</h6>
         </Col>
       )}
+      
       <Row>
         {vestidos.length !== 0 ? (
           vestidos.map((item) => {

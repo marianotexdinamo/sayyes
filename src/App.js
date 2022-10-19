@@ -8,6 +8,7 @@ import Contacto from "./Routes/Contacto";
 import Carrito from "./Routes/Carrito";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import Faq from "./Routes/faq";
 import CartProvider from "./context/cartContext";
 import './App.scss';
 
@@ -20,11 +21,12 @@ function App() {
           <NavBar />
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/quienes-somos" element={<QuienesSomos />} />
+            <Route exact path="/nosotras" element={<QuienesSomos />} />
             <Route exact path="/productos" element={<Productos />} />
             <Route exact path="/producto/:id" element={<Producto />} />
             <Route exact path="/categorias/" element={<Productos />} />
             <Route exact path="/categoria/:categoria" element={<Productos />} />
+            <Route exact path="/faq" element={<Faq />} />
             <Route exact path="/carrito" element={<Carrito />} />
             <Route exact path="/contacto" element={<Contacto />} />
           </Routes>

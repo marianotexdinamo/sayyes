@@ -19,10 +19,10 @@ function NavBar() {
             <LinkContainer to="/">
               <Nav.Link>Inicio</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/quienes-somos">
-              <Nav.Link>Quienes Somos</Nav.Link>
+            <LinkContainer to="/nosotras">
+              <Nav.Link>Nosotras</Nav.Link>
             </LinkContainer>
-            <NavDropdown title="Productos" id="basic-nav-dropdown">
+            <NavDropdown title="Catálogo" id="basic-nav-dropdown">
               <LinkContainer to="/productos">
                 <NavDropdown.Item>Todos</NavDropdown.Item>
               </LinkContainer>
@@ -33,9 +33,12 @@ function NavBar() {
                 <NavDropdown.Item>Usados</NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
-            <LinkContainer to="/contacto">
-              <Nav.Link>Contacto</Nav.Link>
+            <LinkContainer to="/faq">
+              <Nav.Link>Preguntas frecuentes</Nav.Link>
             </LinkContainer>
+              <a class="btn btn-primary" target="_blank" href="https://www.tuturno.io/sayyes">
+                Reservá tu turno
+              </a>
             <Nav.Link>
               <CartWidget></CartWidget>
             </Nav.Link>
